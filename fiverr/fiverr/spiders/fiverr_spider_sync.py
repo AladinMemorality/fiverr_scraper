@@ -19,7 +19,7 @@ custom_settings_dict = {
     "RANDOMIZE_DOWNLOAD_DELAY": False, # If enabled, Scrapy will wait a random amount of time (between 0.5 * DOWNLOAD_DELAY and 1.5 * DOWNLOAD_DELAY) while fetching requests from the same website
     "CONCURRENT_REQUESTS": 5, # The maximum number of concurrent (i.e. simultaneous) requests that will be performed by the Scrapy downloader
     "DOWNLOAD_TIMEOUT": 60 # Setting the timeout parameter to 60 seconds as per the ScraperAPI documentation
-}
+} 
 
 # Define the spider class
 class FiverrSpiderSync(scrapy.Spider):
@@ -27,7 +27,7 @@ class FiverrSpiderSync(scrapy.Spider):
     allowed_domains = ['fiverr.com'] # Allowed domains to crawl
     custom_settings = custom_settings_dict # Standard custom settings of the spider
     custom_settings["FEEDS"] = {"gig_data_sync.json":{"format": "json", "overwrite": True}} # Export to a JSON file with an overwrite functionality
-    master_url = "https://www.fiverr.com/categories/data/data-processing/data-mining-scraping?source=category_filters"
+    master_url = "https://www.fiverr.com/categories/programming-tech/ai-coding/ai-integrations?source=category_filters"
 
     def start_requests(self):
         yield scrapy.Request(

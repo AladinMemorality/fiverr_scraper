@@ -10,7 +10,7 @@ class FiverrSpiderAsync(scrapy.Spider):
     allowed_domains = ['fiverr.com'] # Allowed domains to crawl
     custom_settings = custom_settings_dict # Standard custom settings of the spider
     custom_settings["FEEDS"] = {"gig_data_async.json":{"format": "json", "overwrite": True}} # Export to a JSON file with an overwrite functionality
-    master_url = "https://www.fiverr.com/categories/data/data-processing/data-mining-scraping?source=pagination&page={}&offset=-16"
+    master_url = "https://www.fiverr.com/categories/programming-tech/ai-coding/ai-integrations?source=pagination&page={}&offset=-16"
 
     def start_requests(self):
         for i in range(1,10):
